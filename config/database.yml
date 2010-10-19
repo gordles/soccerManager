@@ -25,7 +25,7 @@ test:
   database: soccerManager_test
   pool: 5
   username: root
-  password:
+  password: qwer4321
   socket: /tmp/mysql.sock
 
 production:
