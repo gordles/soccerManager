@@ -3,7 +3,8 @@ require 'spec_helper'
 describe User do
  
  before(:each) do
-  @attr = { :login => "Example login",
+  @attr = { :login => "Striker",
+            :email => "user@example.com",
             :password => "foobar",
             :password_confirmation => "foobar"
   }
@@ -27,12 +28,35 @@ describe User do
    user_with_duplicate_login.should_not be_valid
  end
  
- #it "should reject login identical up to case" do
-  # upcased_login = @attr[:email].upcase
-  # User.create!(@attr.merge(:email => upcased_login))
-  # user_with_duplicate_email = User.new(@attr)
-  # user_with_duplicate_email.should_not be valid
- #end
+ it "should accept valid email addresses" do 
+     addresses = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
+     addresses.each do |address|
+       valid_email_user = User.new(@attr.merge(:email => address))
+       valid_email_user.should be_valid
+     end
+  end
+
+   it "should reject invalid email addresses" do
+     addresses = %w[user@foo,com user_at_foo.org example.user@foo.]
+     addresses.each do |address|
+       invalid_email_user = User.new(@attr.merge(:email => address))
+       invalid_email_user.should_not be_valid
+     end
+   end
+ 
+  it "should reject duplicate email addresses" do
+    #Put a user with a given email address into the database
+    User.create!(@attr)
+    user_with_duplicate_email = User.new(@attr)
+    user_with_duplicate_email.should_not be_valid
+  end
+ 
+ it "should reject email identical up to case" do
+   upcased_email = @attr[:email].upcase
+   User.create!(@attr.merge(:email => upcased_email))
+   user_with_duplicate_email = User.new(@attr)
+   user_with_duplicate_email.should_not be valid
+ end
  
  describe "password validations" do
    
