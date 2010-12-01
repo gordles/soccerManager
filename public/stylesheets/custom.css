@@ -105,10 +105,6 @@ div.field, div.actions{
 	margin-bottom: 10px;
 }
 
-
-.
-.
-.
 .field_with_errors {
   margin-top: 10px;
   padding: 2px;
@@ -148,4 +144,8 @@ div.field, div.actions{
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+.divisionsidebar{
+	font-size: 12px;
 }
