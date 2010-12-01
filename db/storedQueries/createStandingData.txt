@@ -1,0 +1,1 @@
+rails generate model standingData user_id:integer birthday:date birthcountry:string nationality:string mobilephone:string street:string city:string zip:string firstname:string middlename:string lastname:string

@@ -1,0 +1,1 @@
+rails generate model Player user_id:integer primaryPosition:string secondPosition:string thirdPosition:string weight:float Number:integer team_id:integer foot:string inTeamSince:date

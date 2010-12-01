@@ -1,0 +1,1 @@
+rails generate model Team teamName:string league_id:integer 

@@ -2,13 +2,22 @@
 	<tr>
 		<td class="main">
 			<h1>
-			<%= gravatar_for @user %>
-			<%= @user.login %>, <%= @user.jobID %>
+			<%= gravatar_for @user %> <%= @user.standingdata.firstname %> <%= @user.standingdata.lastname %>			
 			</h1>
 		</td>
 		<td class="sidebar round">
-			<strong>Job:</strong> <%= @user.login %><br />
+			<strong>Job:</strong> <% if @user.job_id %><%= @user.job.jobTitle %>
+				<% else %> No Job defined <% end %><br />
 			<strong>URL</strong> <%= link_to user_path(@user), @user %>
 		</td>
+	</tr>
+	<tr>
+		<td> Position: <%= @user.player.primaryPosition %>, Fuß: <%= @user.player.foot %></td>
+	</tr>
+	<tr>
+		<td> Geburtstag: <%= @user.standingdata.birthday %></td>
+	</tr>
+	<tr>
+		<td> Handy: <%= @user.standingdata.mobilephone %></td>
 	</tr>
 </table>
