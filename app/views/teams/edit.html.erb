@@ -1,0 +1,9 @@
+
+<% @team.players.each do |player| %>
+	<%= form_for(player) do |f|%>
+  	<div class="field">
+  		<%= f.label :foot %>
+		<%= f.text_field :foot %>
+  	</div>
+	<% end %>
+<% end %>

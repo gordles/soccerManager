@@ -1,1 +1,14 @@
+<%# Renders partial from players folder%>
 <%= render @team.players %>
+
+<%# Renders form view of players per team --> very ugly%>
+<%#= render "form" %>
+
+<%# approach to render team list from team folder doesn't work as whished%>
+<%# @team.players.each do |player| %>
+	<%#= div_for(player , :class => "Teamlist") do %>
+		<%#= player.foot %>		
+	<%# end %>
+	<%#= render @team.players%>
+<%# end %>
+	

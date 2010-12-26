@@ -1,0 +1,7 @@
+<p>
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+</p>
+<%= f.fields_for :standingdata do |standingdata|%>
+	<%= render 'standingdata_fields', :f => standingdata %>
+<% end %>

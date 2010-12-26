@@ -17,6 +17,8 @@ class Team < ActiveRecord::Base
   has_many :training_dates
   belongs_to :leagues
   
+  accepts_nested_attributes_for :players
+  
   validates :teamName, :presence => true
   
 end

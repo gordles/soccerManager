@@ -23,4 +23,8 @@ class Player < ActiveRecord::Base
   
   validates :primaryPosition, :presence => true
   
+  attr_accessible :primaryPosition, :foot, :Number, :weight, :inTeamSince
+  
+  accepts_nested_attributes_for :user
+  
 end

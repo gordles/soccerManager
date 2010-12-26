@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   
   belongs_to :job
   
+  accepts_nested_attributes_for :standingdata
+  
   attr_accessor :password
   attr_accessible :login, :email, :password, :password_confirmation
   

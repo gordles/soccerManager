@@ -1,3 +1,5 @@
-<% @teams.each do |t|%>
-	<%= t.division %><br />
+<%= content_for :divisionsidebar do%>
+	<% @teams.each do |t|%>
+		<%= t.division %><br />
+		<% end %>
 <% end %>

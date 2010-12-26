@@ -1,0 +1,32 @@
+<h1> Mannschaft <h2>
+	<%= form_for([@team, @team.players.find(params[:id])]) do |f| %>
+		<div class="field">
+			<%= f.label :foot %>
+			<%= f.text_field :foot %>
+		</div>
+		<div class="field">
+			<%= f.label @players.user.email %>
+			<%= f.text_field :email %>
+		</div>
+		<div class="actions">
+			<%= f.submit "Update" %>
+		</div>
+	<% end %>
+	
+	2nd approach
+	<h1> Spieler <h2>
+	<% form_for @players do |players| %>
+			<div class="field">
+				<%= players.label :foot %>
+				<%= players.text_field :foot %>
+			</div>
+			<% players.fields_for :children do |child_form| %>
+				<div class="field">
+					<%= child_form.label :foot %>
+					<%= child_form.text_field :foot %>
+				</div>
+			<% end %>
+			<div class="actions">
+				<%= players.submit "Update" %>
+			</div>
+	<% end %>

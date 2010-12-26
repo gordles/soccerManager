@@ -1,0 +1,7 @@
+<p>
+	<%= f.label :primaryPosition %>
+	<%= f.text_field :primaryPosition %>
+</p>
+<%= f.fields_for :user do |user| %>
+	<%= render 'user_fields', :f => user %>
+<% end %>

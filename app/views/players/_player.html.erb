@@ -1,5 +1,15 @@
-<%= div_for player do %>
-
-<%= player.foot %>, <%= player.primaryPosition %>, <%= player.user.email %>
-<%= player.user.standingdata.birthday %>
+<% if params[:action] == 'show'%>
+	<%= div_for player do %>
+		<%= player.foot %>, <%= player.primaryPosition %>, <%= player.user.email %>, 
+		<%= player.user.standingdata.birthday %>
+		<span class='actions'>
+			<%= link_to "Edit", edit_team_player_path(@team, player) %>
+		</span>
+	<% end %>
+<% elsif params[:action] == 'edit' %>
+	<%= @player.each do |f| %>
+		<div class="field">
+			<%= f.foot %>
+		</div>
+	<% end %>
 <% end %>
