@@ -4,12 +4,14 @@
     <title>Soccer Manager</title>
     <%= csrf_meta_tag %>
     <%= render 'layouts/stylesheets' %>
+	<%=javascript_include_tag('application')%>
   </head>
   <body>
     <div class="container">
     <%= render 'layouts/header' %>
 	<table border="0" cellspacing="5" cellpadding="5">
-	<tr><td width="15%"><section class="divisionsidebar"><%= render 'layouts/divisionsidebar' %></section></td>
+	<tr><td width="18%"><section class="divisionsidebar">
+		<%= render(:partial =>'teams/divisionsidebar')  %></section></td>
 	<td><section class="round">
 		<% flash.each do |key, value| %>
 			<div class="flash <% key%>"> <%= value %></div>

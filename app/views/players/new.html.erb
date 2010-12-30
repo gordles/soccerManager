@@ -1,6 +1,4 @@
-<%#	= render :partial => 'form' %>
-
-<%= form_for ([@team, @team.players.find(params[:id])]) do |f| %>
+<% form_for ([@team, @team.players.find(params[:id])]) do |f| %>
 		<div class="field">
 			<%= f.label :foot %>
 			<%= f.text_field :foot %>

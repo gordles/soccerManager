@@ -20,5 +20,5 @@ class Team < ActiveRecord::Base
   accepts_nested_attributes_for :players
   
   validates :teamName, :presence => true
-  
+    
 end

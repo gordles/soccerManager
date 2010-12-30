@@ -1,0 +1,12 @@
+<div class="round">
+	<% @team ||= [] %>
+	<%= @team.teamName %>
+	<hr />	
+	<ul>
+		<% @teams.each do |team| %>
+		<!--li><%= link_to "A-Jugend", 'teams/2' %></li-->
+		<li><%= link_to(team.division, :action => "show", :id => team.id, :controller => 'teams') %></li>
+		<% end %>
+	</ul>
+</div>
+
